@@ -4,7 +4,7 @@ export function Home() {
   return (
     <div>
       <h1>Hello Corinne and Bianca!!! HI!!! this working?</h1>
-      <p>Welcome to your new SDG SPA, built with:</p>
+      <p>Welcome to your new SDG SPA, built with: did this work? - corinne</p>
       <ul>
         <li>
           <a href="https://get.asp.net/">ASP.NET Core</a> and{' '}
