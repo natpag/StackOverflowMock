@@ -3,6 +3,9 @@
   text-align: center;
   word-break: break-all;
 }
+p {
+  margin-top: 0.4rem;
+}
 
 html {
   font-size: 14px;
@@ -17,11 +20,20 @@ html {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
-.navbar-nav {
-  position: fixed;
-  top: 0;
+.homeHeader .navContainer {
   width: 100%;
-  background-color: rgba(255, 255, 255, 1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-rows: 2.5rem;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.product {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.navbar-nav .search-container {
+  grid-row: 1;
+  grid-column-start: 2;
+  grid-column-end: 5;
 }
