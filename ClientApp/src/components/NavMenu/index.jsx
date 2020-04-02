@@ -42,13 +42,13 @@ export class NavMenu extends Component {
             </NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse
-              className="navMenu d-sm-inline-flex flex-sm-row-reverse"
+              className="d-sm-inline-flex flex-sm-row-reverse"
               isOpen={!this.state.collapsed}
               navbar
             >
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                  <p>Products</p>
+                  <p className="product">Products</p>
                 </NavItem>
                 <NavItem>
                   <section className="search-container">
