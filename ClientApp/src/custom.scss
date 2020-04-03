@@ -88,6 +88,51 @@ p {
   font-size: 10px;
 }
 
+.QuestionBox {
+  border-style: solid;
+  padding: 0.5rem;
+}
+
+.Title {
+  width: 20rem;
+}
+
+.Body {
+  width: 20rem;
+  height: 10rem;
+}
+
+.Tags {
+  width: 20rem;
+}
+
+.Instructions {
+  border-style: solid;
+  margin: 1rem;
+}
+
+.one {
+  border-bottom: solid;
+}
+
+.two {
+  border-bottom: solid;
+}
+
+.Top {
+  display: flex;
+  padding: 1rem;
+}
+
+.Top,
+button {
+  padding-left: 1rem;
+}
+
+.QandI {
+  display: grid;
+  padding: 1rem;
+}
 .homePage {
   display: grid;
   grid-template-rows: 2rem 2rem 2rem 10rem 10rem 10rem 10rem;
