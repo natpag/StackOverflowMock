@@ -24,7 +24,11 @@ const HomePageComponent = () => {
           <p class="allQuestionsHeader">All Questions</p>
         </section>
         <section className="questionButton">
-          <button className="button">Ask Question</button>
+          <button className="button">
+            <Link to="/ask" className="askButton">
+              Ask Question
+            </Link>
+          </button>
         </section>
         <section className="centerSection">
           <section className="centerContainer">
