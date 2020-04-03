@@ -58,3 +58,21 @@ button {
   display: grid;
   padding: 1rem;
 }
+.homePage {
+  display: grid;
+  grid-template-rows: 10rem 10rem 10rem 10rem;
+  grid-template-columns: 15% 25% 35% 25%;
+  padding: 1rem;
+}
+
+.leftSidebar {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.allQuestions {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

@@ -1,4 +1,5 @@
 ﻿a.navbar-brand {
+  position: fixed;
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -14,5 +15,15 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.navMenu {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.navbar-nav {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }

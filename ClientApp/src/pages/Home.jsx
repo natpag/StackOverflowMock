@@ -1,62 +1,39 @@
 import React from 'react'
 
-export function Home() {
+const Home = () => {
   return (
-    <div>
-      <h1>Hello Corinne and Bianca!!! HI!!! this working?</h1>
-      <p>Welcome to your new SDG SPA, built with: did this work? - corinne</p>
-      <ul>
-        <li>
-          <a href="https://get.asp.net/">ASP.NET Core</a> and{' '}
-          <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">
-            C#
-          </a>{' '}
-          for cross-platform server-side code
-        </li>
-        <li>
-          <a href="https://facebook.github.io/react/">React</a> for client-side
-          code
-        </li>
-        <li>
-          <a href="https://www.typescriptlang.org/">Typescript</a> for better
-          client-side code
-        </li>
-        <li>
-          <a href="https://sass-lang.com/">Sass</a> for better css
-        </li>
-        <li>
-          <a href="http://getbootstrap.com/">Bootstrap</a> for layout and
-          styling
-        </li>
-      </ul>
-      <p>To help you get started, we have also set up:</p>
-      <ul>
-        <li>
-          <strong>Client-side navigation</strong>.
-        </li>
-        <li>
-          <strong>Development server integration</strong>. In development mode,
-          the development server from <code>create-react-app</code> runs in the
-          background automatically, so your client-side resources are
-          dynamically built on demand and the page refreshes when you modify any
-          file.
-        </li>
-        <li>
-          <strong>Efficient production builds</strong>. In production mode,
-          development-time features are disabled, and your{' '}
-          <code>dotnet publish</code> configuration produces minified,
-          efficiently bundled JavaScript files.
-        </li>
-        <li>
-          <strong>Docker</strong>.
-        </li>
-      </ul>
-      <p>
-        The <code>ClientApp</code> subdirectory is a standard React application
-        based on the <code>create-react-app</code> template. If you open a
-        command prompt in that directory, you can run <code>npm</code> commands
-        such as <code>npm test</code> or <code>npm install</code>.
-      </p>
-    </div>
+    <section className="homePage">
+      <section className="leftSidebar">
+        <p>Home</p>
+        <p>PUBLIC</p>
+        <p>Stack Overflow</p>
+        <section>
+          <p>Tags</p>
+          <p>Users</p>
+          <p>Jobs</p>
+        </section>
+        <p>TEAMS</p>
+      </section>
+
+      <section className="allQuestions">
+        <h2>All Questions</h2>
+        <button>Ask Question</button>
+      </section>
+
+      <section className="rightSection">
+        <section className="overflowBlog">
+          <p>The Overflow Blog</p>
+          <p>Featured on Meta</p>
+        </section>
+        <section>
+          <p>Custom Filters</p>
+        </section>
+        <section>Watched Tags on Public Q&A</section>
+        <section>Ignored Tags</section>
+        <section>Hot Networking Questions</section>
+      </section>
+    </section>
   )
 }
+
+export default Home
