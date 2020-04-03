@@ -17,9 +17,9 @@ const Answer = () => {
           <p className="answer-code-section">code example goes here</p>
         </section>
         <section className="answer-tag-button-container">
-          <button>javascript</button>
-          <button>html</button>
-          <button>react</button>
+          <button class="post-tag">javascript</button>
+          <button class="post-tag">html</button>
+          <button class="post-tag">react</button>
         </section>
 
         <section className="answer-share-user-container">
@@ -42,7 +42,7 @@ const Answer = () => {
             placeholder="type answer here..."
           ></textarea>
         </section>
-        <button className="post-your-answer">Post Your Answer</button>
+        <button className="button">Post Your Answer</button>
       </section>
     </>
   )

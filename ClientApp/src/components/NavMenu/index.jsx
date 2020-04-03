@@ -24,13 +24,15 @@ export class NavMenu extends Component {
 
   render() {
     return (
-      <header class="homeHeader">
+      <header className="homeHeader">
         <p>
-          <img class="logo" src={StackoverflowImage} alt="Stackoverflow" />
-          stack<b>overflow</b>
+          <img className="logo" src={StackoverflowImage} alt="Stackoverflow" />
+          <Link to="/" class="homeLink">
+            stack<b>overflow</b>
+          </Link>
         </p>
         <p>Products</p>
-        <input type="text" class="searchBar"></input>
+        <input type="text" className="searchBar"></input>
         <p>User Profile</p>
       </header>
     )
