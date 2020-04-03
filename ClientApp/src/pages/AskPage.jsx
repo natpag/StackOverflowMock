@@ -3,11 +3,11 @@ import React from 'react'
 const AskPage = () => {
   return (
     <>
-      <body>
+      <body className="AskPageBody">
         <section class="Top">
           <h1>Ask a question in</h1>
-          {/* make a drop down button eventually? */}
-          <button>Public Q&A</button>
+          {/* <!-- make a drop down button eventually? --> */}
+          <h2>Public Q&A</h2>
         </section>
         <section class="QandI">
           <section class="QuestionBox">
@@ -45,6 +45,7 @@ const AskPage = () => {
             </div>
           </section>
         </section>
+        <button className="AskPageButton">submit</button>
       </body>
     </>
   )
