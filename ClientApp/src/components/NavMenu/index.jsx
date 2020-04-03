@@ -33,43 +33,12 @@ export class NavMenu extends Component {
   render() {
     return (
       <header class="homeHeader">
-        <Navbar
-          className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
-          light
-        >
-          <Container>
-            <NavbarBrand tag={Link} to="/">
-              stack<b>overflow</b>
-            </NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse
-              className="d-sm-inline-flex flex-sm-row-reverse"
-              isOpen={!this.state.collapsed}
-              navbar
-            >
-              <section className="navContainer">
-                <ul className="navbar-nav flex-grow">
-                  <NavItem>
-                    <p className="product">Products</p>
-                  </NavItem>
-                  <NavItem>
-                    <section className="search-container">
-                      <select id="search-channel-selector">All</select>
-                      <input
-                        type="search"
-                        /*value={searchTerm}
-                      onChange={e => setSearchTerm(e.target.value)}*/
-                      />
-                    </section>
-                  </NavItem>
-                  <NavItem>
-                    <p>User Profile</p>
-                  </NavItem>
-                </ul>
-              </section>
-            </Collapse>
-          </Container>
-        </Navbar>
+        <p>
+          stack<b>overflow</b>
+        </p>
+        <p>Products</p>
+        <input type="text" class="searchBar"></input>
+        <p>userImage</p>
       </header>
     )
   }
