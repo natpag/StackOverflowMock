@@ -1,38 +1,47 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <section className="homePage">
-      <section className="leftSidebar">
-        <p>Home</p>
-        <p>PUBLIC</p>
-        <p>Stack Overflow</p>
-        <section>
-          <p>Tags</p>
-          <p>Users</p>
-          <p>Jobs</p>
-        </section>
-        <p>TEAMS</p>
-      </section>
-
-      <section className="allQuestions">
-        <h2>All Questions</h2>
+    <>
+      {/* <div> */}
+      {/* <h2>All Questions</h2>
         <button>Ask Question</button>
-      </section>
+        <Link to="/answer">answer</Link>
+      </div> */}
+      <section className="homePage">
+        <section className="leftSidebar">
+          <p>Home</p>
+          <p>PUBLIC</p>
+          <p>Stack Overflow</p>
+          <section>
+            <p>Tags</p>
+            <p>Users</p>
+            <p>Jobs</p>
+          </section>
+          <p>TEAMS</p>
+        </section>
 
-      <section className="rightSection">
-        <section className="overflowBlog">
-          <p>The Overflow Blog</p>
-          <p>Featured on Meta</p>
+        <section className="allQuestions">
+          <h5>All Questions</h5>
         </section>
-        <section>
-          <p>Custom Filters</p>
+        <section className="questionButton">
+          <button className="button">Ask Question</button>
         </section>
-        <section>Watched Tags on Public Q&A</section>
-        <section>Ignored Tags</section>
-        <section>Hot Networking Questions</section>
+        <section className="rightSection">
+          <section className="overflowBlog">
+            <p>The Overflow Blog</p>
+            <p>Featured on Meta</p>
+          </section>
+          <section>
+            <p>Custom Filters</p>
+          </section>
+          <p>Watched Tags on Public Q&A</p>
+          <p>Ignored Tags</p>
+          <p>Hot Networking Questions</p>
+        </section>
       </section>
-    </section>
+    </>
   )
 }
 

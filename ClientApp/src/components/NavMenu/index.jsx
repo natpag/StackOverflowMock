@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Collapse,
-  Container,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavItem,
-  NavLink,
-} from 'reactstrap'
+import StackoverflowImage from './images/StackoverflowImage.jpg'
+
 import { Link } from 'react-router-dom'
 import './style.scss'
 
@@ -31,41 +24,14 @@ export class NavMenu extends Component {
 
   render() {
     return (
-      <header>
-        <Navbar
-          className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
-          light
-        >
-          <Container>
-            <NavbarBrand tag={Link} to="/">
-              stackoverflow
-            </NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse
-              className="navMenu d-sm-inline-flex flex-sm-row-reverse"
-              isOpen={!this.state.collapsed}
-              navbar
-            >
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <p>Products</p>
-                </NavItem>
-                <NavItem>
-                  <section className="search-container">
-                    <input
-                      type="search"
-                      /*value={searchTerm}
-                      onChange={e => setSearchTerm(e.target.value)}*/
-                    />
-                  </section>
-                </NavItem>
-                <NavItem>
-                  <p>User Profile</p>
-                </NavItem>
-              </ul>
-            </Collapse>
-          </Container>
-        </Navbar>
+      <header class="homeHeader">
+        <p>
+          <img class="logo" src={StackoverflowImage} alt="Stackoverflow" />
+          stack<b>overflow</b>
+        </p>
+        <p>Products</p>
+        <input type="text" class="searchBar"></input>
+        <p>userImage</p>
       </header>
     )
   }
