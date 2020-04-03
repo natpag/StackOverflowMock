@@ -176,3 +176,65 @@ button {
   border: 1px solid transparent;
   line-height: 1.15384615;
 }
+
+.QuestionBox {
+  border-style: solid;
+  padding: 0.5rem;
+  width: 55%;
+  background-color: whitesmoke;
+}
+
+.Title {
+  width: 90%;
+}
+
+.Body {
+  width: 90%;
+  height: 10rem;
+}
+
+.Tags {
+  width: 90%;
+}
+
+.Instructions {
+  border-style: solid;
+  margin: 1rem;
+  width: 30%;
+  background-color: whitesmoke;
+}
+
+.one {
+  border-bottom: solid;
+}
+
+.two {
+  border-bottom: solid;
+}
+
+.Top {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  padding-left: 1rem;
+}
+
+.Top h2 {
+  padding-left: 2rem;
+}
+
+.QandI {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.AskPageButton {
+  margin: 1rem;
+}
+
+.AskPageBody {
+  margin: 0;
+  min-height: 100%;
+  background-color: grey;
+}

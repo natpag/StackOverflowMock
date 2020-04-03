@@ -6,6 +6,7 @@ import HelloWorld from './pages/_template/HelloWorld'
 import HeyWorld from './pages/_template/HeyWorld'
 import NotFound from './pages/NotFound'
 import AnswerPage from './pages/AnswerPage'
+import AskPage from './pages/AskPage'
 import './custom.scss'
 export default class App extends Component {
   static displayName = App.name
