@@ -21,12 +21,52 @@ const Home = () => {
           </section>
           <p>TEAMS</p>
         </section>
-
         <section className="allQuestions">
-          <h5>All Questions</h5>
+          <p class="allQuestionsHeader">All Questions</p>
         </section>
         <section className="questionButton">
           <button className="button">Ask Question</button>
+        </section>
+        <section className="centerSection">
+          <section className="centerContainer">
+            <div className="boxed centerHeader">
+              Stack Overflow Recently Active Questions
+            </div>
+            <section className="boxed questionBox">
+              <div className="votes">
+                <div className="mini-counts">
+                  <span title>0</span>
+                  <div className="label">votes</div>
+                </div>
+              </div>
+              <div className="answers">
+                <div className="mini-counts">
+                  <span title>0</span>
+                  <div className="label">answers</div>
+                </div>
+              </div>
+              <div className="views">
+                <div className="mini-counts">
+                  <span title>0</span>
+                  <div className="label">views</div>
+                </div>
+              </div>
+              <section className="summary">
+                <Link to="/answer">
+                  Summary of Question / can also be title
+                </Link>
+                <section className="tags">
+                  <Link to="/answer" class="post-tag">
+                    javascript
+                  </Link>
+                  <Link to="/answer" class="post-tag">
+                    javascript
+                  </Link>
+                </section>
+              </section>
+              <section className="startedBy">Added by "user"</section>
+            </section>
+          </section>
         </section>
         <section className="rightSection">
           <section className="overflowBlog">
