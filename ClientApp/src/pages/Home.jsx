@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <>
-      <div>
-        <h2>All Questions</h2>
+      {/* <div> */}
+      {/* <h2>All Questions</h2>
         <button>Ask Question</button>
         <Link to="/answer">answer</Link>
-      </div>
+      </div> */}
       <section className="homePage">
         <section className="leftSidebar">
           <p>Home</p>
@@ -23,10 +23,11 @@ const Home = () => {
         </section>
 
         <section className="allQuestions">
-          <h2>All Questions</h2>
-          <button>Ask Question</button>
+          <h5>All Questions</h5>
         </section>
-
+        <section className="questionButton">
+          <button className="button">Ask Question</button>
+        </section>
         <section className="rightSection">
           <section className="overflowBlog">
             <p>The Overflow Blog</p>
@@ -35,9 +36,9 @@ const Home = () => {
           <section>
             <p>Custom Filters</p>
           </section>
-          <section>Watched Tags on Public Q&A</section>
-          <section>Ignored Tags</section>
-          <section>Hot Networking Questions</section>
+          <p>Watched Tags on Public Q&A</p>
+          <p>Ignored Tags</p>
+          <p>Hot Networking Questions</p>
         </section>
       </section>
     </>

@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
-import {
-  Collapse,
-  Container,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavItem,
-  NavLink,
-  Dropdown,
-} from 'reactstrap'
+import StackoverflowImage from './images/StackoverflowImage.jpg'
+
 import { Link } from 'react-router-dom'
 import './style.scss'
 
@@ -34,6 +26,7 @@ export class NavMenu extends Component {
     return (
       <header class="homeHeader">
         <p>
+          <img class="logo" src={StackoverflowImage} alt="Stackoverflow" />
           stack<b>overflow</b>
         </p>
         <p>Products</p>
