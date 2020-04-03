@@ -90,7 +90,7 @@ p {
 
 .homePage {
   display: grid;
-  grid-template-rows: 2rem 2rem 10rem 10rem 10rem 10rem;
+  grid-template-rows: 2rem 2rem 2rem 10rem 10rem 10rem 10rem;
   grid-template-columns: 15% 25% 35% 25%;
 }
 
@@ -104,13 +104,17 @@ p {
   grid-row-start: 2;
   grid-column-start: 2;
   grid-column-end: 3;
-  margin-top: 1rem;
+}
+
+.allQuestionsHeader {
+  font-size: 1.2rem;
 }
 
 .rightSection {
   grid-row-start: 2;
   grid-column-start: 4;
   grid-column-end: 5;
+  padding-left: 1rem;
 }
 
 .questionButton {
@@ -130,4 +134,102 @@ p {
   font-size: 10px;
   border: 1px solid transparent;
   line-height: 1.15384615;
+}
+
+.centerSection {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-top: 1rem;
+}
+
+.centerHeader {
+  font-size: 8px;
+  padding: 5px;
+  border: 0.5px solid #dadada;
+  background-color: #fafafb;
+  margin: 0;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+
+.questionBox {
+  padding: 5px;
+  border: 0.5px solid #dadada;
+}
+
+.votes {
+  display: inline-block;
+  height: 38px;
+  min-width: 38px;
+  margin: 0 3px 0 0;
+  font-size: 11px;
+  padding: 7px 6px;
+  text-align: center;
+  color: #948d95;
+}
+
+.answers {
+  display: inline-block;
+  margin: 0 3px 0 0;
+  min-width: 44px;
+  height: auto;
+  font-size: 11px;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #948d95;
+  text-align: center;
+}
+
+.views {
+  display: inline-block;
+  height: 38px;
+  min-width: 40px;
+  margin: 0 7px 0 0;
+  font-size: 11px;
+  color: #948d95;
+  padding: 7px 6px;
+  text-align: center;
+}
+
+span {
+  font-size: 10px;
+  padding: 1rem;
+  margin: 0;
+  color: #948d95;
+}
+
+.label {
+  font-size: 6px;
+  color: #948d95;
+}
+
+.mini-counts {
+  margin-bottom: 4px;
+}
+
+.summary {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.post-tag {
+  color: #2c5777;
+  background-color: #d1e5f1;
+  font-size: 8px;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 0.25em;
+  margin: 2px 2px 2px 0;
+}
+
+.startedBy {
+  padding: 0;
+  font-size: 8px;
+  text-align-last: right;
+  color: #948d95;
 }

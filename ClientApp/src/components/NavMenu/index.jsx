@@ -31,7 +31,7 @@ export class NavMenu extends Component {
         </p>
         <p>Products</p>
         <input type="text" class="searchBar"></input>
-        <p>userImage</p>
+        <p>User Profile</p>
       </header>
     )
   }
