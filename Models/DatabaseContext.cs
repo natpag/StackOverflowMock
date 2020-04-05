@@ -9,6 +9,7 @@ namespace StackOverflowMock.Models
   {
 
     public DbSet<Answer> Answers { get; set; }
+    public DbSet<Question> Questions { get; set; }
 
 
     private string ConvertPostConnectionToConnectionString(string connection)
