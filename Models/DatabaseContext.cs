@@ -8,7 +8,7 @@ namespace StackOverflowMock.Models
   public partial class DatabaseContext : DbContext
   {
 
-
+    public DbSet<Answer> Answers { get; set; }
 
 
     private string ConvertPostConnectionToConnectionString(string connection)
