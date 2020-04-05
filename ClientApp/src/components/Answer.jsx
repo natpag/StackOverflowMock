@@ -36,7 +36,7 @@ const Answer = props => {
             <li className="answer-user-info">user info somehow</li>
           </ul>
         </section>
-
+        <ul>all answers here...</ul>
         <h6 className="answer-know-someone">
           Know someone who can answer? Share a link to this question via email.
         </h6>
@@ -48,9 +48,13 @@ const Answer = props => {
             cols="50"
             rows="10"
             placeholder="type answer here..."
+            value={newAnswerText}
+            onChange={e => setNewAnswerText(e.target.value)}
           ></textarea>
         </section>
-        <button className="button">Post Your Answer</button>
+        <button className="button" onClick={sendAnswerToApi}>
+          Post Your Answer
+        </button>
       </section>
     </>
   )
