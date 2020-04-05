@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 
-const Answer = () => {
+const Answer = props => {
+  const { answer } = props
+
+  const [newAnswerText, setNewAnswerText] = useState('')
+
+  const sendAnswerToApi = async () => {
+    const resp = await axios.post(`/api/`)
+  }
   return (
     <>
       <section className="answer-container">
