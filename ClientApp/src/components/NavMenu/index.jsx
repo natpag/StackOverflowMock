@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import StackoverflowImage from './images/StackoverflowImage.jpg'
 import { Link } from 'react-router-dom'
-import Search from '../NavMenu/Search'
 import './style.scss'
 
 export class NavMenu extends Component {
@@ -32,7 +31,11 @@ export class NavMenu extends Component {
           </Link>
         </p>
         <p>Products</p>
-        <Search className="searchBar" />
+        <p>
+          <Link to="/Search" className="searchLink">
+            Search
+          </Link>
+        </p>
         <p>User Profile</p>
       </header>
     )

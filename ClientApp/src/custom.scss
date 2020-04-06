@@ -1,6 +1,6 @@
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: black;
 }
 
 code {
@@ -14,8 +14,7 @@ code {
 .answer-container {
   padding: 1rem;
 }
-.answer-header {
-}
+
 .answer-under-header {
   list-style: none;
   display: flex;
@@ -347,6 +346,33 @@ span {
   color: #948d95;
 }
 
-.searchContainer input {
-  border: 1px solid #bbc0c4;
+.search-container {
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.search-container input {
+  width: 75%;
+}
+
+.no-results-message {
+  align-items: center;
+  color: slategrey;
+}
+
+.results-container {
+  grid-row-start: 5;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.resultList {
+  list-style: none;
+}
+
+.homePage .submitted {
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-column-end: 5;
 }

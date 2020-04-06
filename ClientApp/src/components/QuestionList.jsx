@@ -3,9 +3,14 @@ import React from 'react'
 const QuestionList = props => {
   let { results } = props
   return (
-    <ul>
+    <ul className="resultList">
       {results.map(question => {
-        return <li>{question.Title}</li>
+        return (
+          <li>
+            <p>Title: {question.title}</p>
+            <p>Question: {question.body}</p>
+          </li>
+        )
       })}
     </ul>
   )

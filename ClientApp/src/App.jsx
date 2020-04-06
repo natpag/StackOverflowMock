@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound'
 import AnswerPage from './pages/AnswerPage'
 import AskPage from './pages/AskPage'
 import SubmittedQuestion from './pages/SubmittedQuestion'
+import Search from './pages/Search'
 import './custom.scss'
 
 export default class App extends Component {
@@ -23,6 +24,7 @@ export default class App extends Component {
           <Route exact path="/answer" component={AnswerPage} />
           <Route exact path="/ask" component={AskPage} />
           <Route exact path="/Submitted" component={SubmittedQuestion} />
+          <Route exact path="/Search" component={Search} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </Layout>
