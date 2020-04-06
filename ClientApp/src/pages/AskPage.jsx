@@ -1,65 +1,19 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 
-// const PostQuestion = () => {
-//   const [question, setQuestion] = useState({})
-//   const [wasSuccessfullyCreated, setWasSuccessfullyCreated] = useState({
-//     shouldRedirect: false,
-//     newTrailInformation: {},
-//   })
-
-//   const addQuestionToApi = async () => {
-//     console.log('adding', question)
-//     const resp = await axios.post('/api/question', question)
-//     if (resp.status === 201) {
-//       // do something something else
-//       setWasSuccessfullyCreated({
-//         shouldRedirect: true,
-//           newQuestionInformation: resp.data, })
-
-const AddQuestion = () => {
-  const [question, setQuestion] = useState({})
-  const [wasSuccessfullyCreated, setWasSuccessfullyCreated] = useState({
-    shouldRedirect: false,
-    newQuestionInformation: {},
-  })
-
-  const updateQuestionData = e => {
-    const key = e.target.name
-    const value = e.target.value
-    setQuestion(prevQuestion => {
-      prevQuestion[key] = value
-      return prevQuestion
-    })
-  }
-
-  const addQuestionToApi = async () => {
-    console.log('adding', question)
-    const resp = await axios.post('/api/questions', question)
-    if (resp.status === 201) {
-      // do something something else
-      setWasSuccessfullyCreated({
-        shouldRedirect: true,
-        newQuestionInformation: resp.data,
-      })
-    } else {
-      // do something else here
-    }
-  }
-
-  if (wasSuccessfullyCreated.shouldRedirect) {
-    return (
-      <Redirect
-        to={{
-          pathname: `/question/${wasSuccessfullyCreated.newQuestionInformation.id}`,
-          state: { trail: wasSuccessfullyCreated.newQuestionInformation },
-        }}
-      />
-    )
-  }
-}
 const AskPage = () => {
+  const [newQuestionText, setNewQuestionText] = useState('')
+  const [newTitleText, setNewTitleText] = useState('')
+  const [newTagText, setNewTagText] = useState('')
+  const sendQuestionToApi = async () => {
+    const resp = await axios.post(`/api/Questions`, {
+      Body: newQuestionText,
+      Title: newTitleText,
+      Tags: newTagText,
+    })
+    console.log(resp.data)
+  }
+
   return (
     <>
       <body className="AskPageBody">
@@ -71,11 +25,20 @@ const AskPage = () => {
         <section class="QandI">
           <section class="QuestionBox">
             <h2>Title</h2>
-            <input class="Title"></input>
+            <input
+              class="Title"
+              onChange={e => setNewTitleText(e.target.value)}
+            ></input>
             <h2>Body</h2>
-            <input class="Body" onChange={updateQuestionData}></input>
+            <input
+              class="Body"
+              onChange={e => setNewQuestionText(e.target.value)}
+            ></input>
             <h2>tags</h2>
-            <input class="Tags"></input>
+            <input
+              class="Tags"
+              onChange={e => setNewTagText(e.target.value)}
+            ></input>
           </section>
           <section class="Instructions">
             <div class="one">
@@ -104,7 +67,7 @@ const AskPage = () => {
             </div>
           </section>
         </section>
-        <button className="AskPageButton" onClick={addQuestionToApi}>
+        <button className="AskPageButton" onClick={sendQuestionToApi}>
           submit
         </button>
       </body>
