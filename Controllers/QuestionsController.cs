@@ -85,6 +85,16 @@ namespace StackOverflowMock.Controllers
       return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
     }
 
+    // POST Answer
+    [HttpPost("{questionId}/answers")]
+    public async Task<ActionResult> AddAnswerToQuestion(int questionId, Answer answer)
+    {
+      answer.QuestionId = questionId;
+      _context.Answers.Add(answer);
+      await _context.SaveChangesAsync();
+      return Ok(answer);
+    }
+
     // DELETE: api/Questions/5
     [HttpDelete("{id}")]
     public async Task<ActionResult<Question>> DeleteQuestion(int id)

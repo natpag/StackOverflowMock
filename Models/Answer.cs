@@ -12,7 +12,9 @@ namespace StackOverflowMock.Models
     //navigation properties
     public int QuestionId { get; set; }
 
+    // [JsonIgnore]
     public Question Question { get; set; }
+
 
     // public int UserId { get; set; }
   }

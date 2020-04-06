@@ -1,20 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Question from '../components/Question'
 
 const Answer = props => {
-  const { answer } = props
-
-  const [newAnswerText, setNewAnswerText] = useState('')
+  console.log(props)
+  // const questionId = props.match.params.questionId
+  const { question } = props
+  const { questionId } = props
+  const [newAnswerText, setNewAnswerText] = useState()
 
   const sendAnswerToApi = async () => {
-    const resp = await axios.post(`/api/`)
+    const resp = await axios.post(`/api/Questions/${questionId}/answers`, {
+      answer: newAnswerText,
+    })
+    console.log(resp.data)
   }
+
   return (
     <>
       <section className="answer-container">
         <section className="answer-header">
           <h2>Question Title</h2>
-          <h2>{question.name}</h2>
+          <h2>{question1}</h2>
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
@@ -57,6 +64,15 @@ const Answer = props => {
           Post Your Answer
         </button>
       </section>
+      {/* <ul>
+        {question.answer.map(answer => {
+          return (
+            <li>
+              <p>{answer.answer}</p>
+            </li>
+          )
+        })}
+      </ul> */}
     </>
   )
 }

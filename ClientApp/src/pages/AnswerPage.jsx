@@ -1,10 +1,10 @@
 import React from 'react'
 import Answer from '../components/Answer'
 
-const AnswerPage = () => {
+const AnswerPage = props => {
   return (
     <>
-      <Answer />
+      <Answer questionId={props.match.params.questionId} />
     </>
   )
 }

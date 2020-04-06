@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound'
 import AnswerPage from './pages/AnswerPage'
 import AskPage from './pages/AskPage'
 import './custom.scss'
+import QuestionDetails from './pages/QuestionDetails'
 export default class App extends Component {
   static displayName = App.name
 
@@ -19,6 +20,8 @@ export default class App extends Component {
           <Route exact path="/counter" component={HelloWorld} />
           <Route exact path="/typescript" component={HeyWorld} />
           <Route exact path="/answer" component={AnswerPage} />
+          <Route exact path="/question/:questionId" component={AnswerPage} />
+
           <Route exact path="/ask" component={AskPage} />
           <Route exact path="*" component={NotFound} />
         </Switch>
