@@ -14,6 +14,7 @@ const Answer = props => {
       answer: newAnswerText,
     })
     console.log(resp.data)
+    const resp = await axios.post(`/api/question`)
   }
 
   return (

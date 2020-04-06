@@ -68,9 +68,13 @@ const Question = () => {
             </div>
           </section>
         </section>
-        <button className="AskPageButton" onClick={sendQuestionToApi}>
+        <Link
+          to="/Submitted"
+          className="AskPageButton"
+          onClick={sendQuestionToApi}
+        >
           submit
-        </button>
+        </Link>
       </body>
     </>
   )
