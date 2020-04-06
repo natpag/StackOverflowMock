@@ -7,7 +7,7 @@ const Answer = props => {
   const [newAnswerText, setNewAnswerText] = useState('')
 
   const sendAnswerToApi = async () => {
-    const resp = await axios.post(`/api/`)
+    const resp = await axios.post(`/api/question`)
   }
   return (
     <>
