@@ -237,12 +237,17 @@ button {
 
 .AskPageButton {
   margin: 1rem;
+  border-style: solid;
+  background-color: lightblue;
+  color: black;
 }
 
 .AskPageBody {
   margin: 0;
   min-height: 100%;
   background-color: grey;
+  padding-top: 3rem;
+  padding-bottom: 3reme;
 }
 .centerSection {
   grid-row-start: 3;
