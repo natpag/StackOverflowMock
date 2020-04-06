@@ -10,6 +10,7 @@ namespace StackOverflowMock.Models
     public string Title { get; set; }
     public string Body { get; set; }
     public string Tags { get; set; }
+    public int Vote { get; set; }
 
     //navigation properties
     public List<Answer> Answers { get; set; } = new List<Answer>();

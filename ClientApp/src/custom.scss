@@ -15,7 +15,6 @@ code {
   padding: 1rem;
 }
 .answer-header {
-  display: grid;
 }
 .answer-under-header {
   list-style: none;
@@ -341,4 +340,8 @@ span {
   font-size: 8px;
   text-align-last: right;
   color: #948d95;
+}
+
+.searchContainer input {
+  border: 1px solid #bbc0c4;
 }
