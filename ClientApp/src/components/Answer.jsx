@@ -14,6 +14,7 @@ const Answer = props => {
       <section className="answer-container">
         <section className="answer-header">
           <h2>Question Title</h2>
+          <h2>{question.name}</h2>
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
