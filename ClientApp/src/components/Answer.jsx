@@ -3,46 +3,61 @@ import axios from 'axios'
 
 const Answer = props => {
   console.log(props)
+<<<<<<< HEAD
+=======
+  const { question } = props
+>>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
   const { questionId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
 
+  // Send Answer to API
   const sendAnswerToApi = async () => {
     const resp = await axios.post(`/api/Questions/${questionId}/answers`, {
       comment: newAnswerText,
     })
     console.log(resp.data)
   }
-  // empty obj
   const [questionDetail, setQuestionDetail] = useState({
     questionData: {},
   })
 
+<<<<<<< HEAD
   useEffect(() => {
     getQuestionData()
   }, [])
 
+=======
+  // Get Question Details
+  const getQuestionData = async () => {
+    const response = await axios.get(`/api/Questions/${questionId}`)
+    setQuestionDetail({
+      questionData: response.data,
+    })
+  }
+>>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
   const [questionDetails, setQuestionDetails] = useState({
     questionData: {},
   })
 
-  const getQuestionData = async () => {
-    const resp = await axios.get('/api/Questions/' + questionId)
-    console.log(resp.data)
-    console.log(resp.data.title)
-    setQuestionDetails(resp.data)
-  }
+  // const getQuestionData = async () => {
+  //   const resp = await axios.get('/api/Questions/' + questionId)
+  //   console.log(resp.data)
+  //   console.log(resp.data.title)
+  //   setQuestionDetails(resp.data)
+  // }
 
+  // Get Answer Details
   const [answerDetails, setAnswerDetails] = useState({
     answerData: {},
   })
-
   const getAllAnswers = async () => {
     const resp = await axios.get('/api/Answers/question/' + questionId)
     console.log(resp.data)
     setAnswers(resp.data)
   }
 
+  // Use Effects for Answer and Questions to Show on Page
   useEffect(() => {
     getQuestionData()
   }, [])
@@ -55,7 +70,13 @@ const Answer = props => {
     <>
       <section className="answer-container">
         <section className="answer-header">
+<<<<<<< HEAD
           <h2>{questionDetails.title}</h2>
+=======
+          <h2>Question Title</h2>
+          <h2>{questionDetail.questionData.title}</h2>
+
+>>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
@@ -78,6 +99,7 @@ const Answer = props => {
             <li className="answer-user-info">user info somehow</li>
           </ul>
         </section>
+
         <ul className="AnswerList">
           {answers.map(answer => {
             return (
@@ -87,9 +109,11 @@ const Answer = props => {
             )
           })}
         </ul>
+
         <h6 className="answer-know-someone">
           Know someone who can answer? Share a link to this question via email.
         </h6>
+
         <h5>Your Answer</h5>
         <section className="answer-text-area-container">
           <textarea
@@ -106,15 +130,6 @@ const Answer = props => {
           Post Your Answer
         </button>
       </section>
-      {/* <ul>
-        {question.answer.map(answer => {
-          return (
-            <li>
-              <p>{answer.answer}</p>
-            </li>
-          )
-        })}
-      </ul> */}
     </>
   )
 }
