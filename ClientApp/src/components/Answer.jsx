@@ -3,10 +3,6 @@ import axios from 'axios'
 
 const Answer = props => {
   console.log(props)
-<<<<<<< HEAD
-=======
-  const { question } = props
->>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
   const { questionId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
@@ -18,34 +14,17 @@ const Answer = props => {
     })
     console.log(resp.data)
   }
-  const [questionDetail, setQuestionDetail] = useState({
-    questionData: {},
-  })
 
-<<<<<<< HEAD
-  useEffect(() => {
-    getQuestionData()
-  }, [])
-
-=======
   // Get Question Details
-  const getQuestionData = async () => {
-    const response = await axios.get(`/api/Questions/${questionId}`)
-    setQuestionDetail({
-      questionData: response.data,
-    })
-  }
->>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
   const [questionDetails, setQuestionDetails] = useState({
     questionData: {},
   })
 
-  // const getQuestionData = async () => {
-  //   const resp = await axios.get('/api/Questions/' + questionId)
-  //   console.log(resp.data)
-  //   console.log(resp.data.title)
-  //   setQuestionDetails(resp.data)
-  // }
+  const getQuestionData = async () => {
+    const resp = await axios.get('/api/Questions/' + questionId)
+    console.log(resp.data)
+    setQuestionDetails(resp.data)
+  }
 
   // Get Answer Details
   const [answerDetails, setAnswerDetails] = useState({
@@ -70,13 +49,7 @@ const Answer = props => {
     <>
       <section className="answer-container">
         <section className="answer-header">
-<<<<<<< HEAD
           <h2>{questionDetails.title}</h2>
-=======
-          <h2>Question Title</h2>
-          <h2>{questionDetail.questionData.title}</h2>
-
->>>>>>> 4ffdef48ed1be41d664244547c8aab32889082b7
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>

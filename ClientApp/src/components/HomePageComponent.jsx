@@ -8,7 +8,7 @@ const HomePageComponent = () => {
   })
 
   const getQuestionData = async () => {
-    const resp = await axios.get(`/api/questions`)
+    const resp = await axios.get(`/api/Questions/`)
     console.log(resp.data)
     setAllQuestions(resp.data)
   }
