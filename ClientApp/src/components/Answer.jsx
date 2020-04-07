@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Question from '../components/Question'
+import QuestionAverageRating from './QuestionAverageRating'
 
 const Answer = props => {
   console.log(props)
@@ -9,11 +10,13 @@ const Answer = props => {
   const { answerId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
+  const [reviewScore, setReviewScore] = useState(0)
 
   // Send Answer to API
   const sendAnswerToApi = async () => {
     const resp = await axios.post(`/api/Questions/${questionId}/answers`, {
       comment: newAnswerText,
+      vote: reviewScore,
     })
     console.log(resp.data)
   }
@@ -31,13 +34,6 @@ const Answer = props => {
   const [questionDetails, setQuestionDetails] = useState({
     questionData: {},
   })
-
-  // const getQuestionData = async () => {
-  //   const resp = await axios.get('/api/Questions/' + questionId)
-  //   console.log(resp.data)
-  //   console.log(resp.data.title)
-  //   setQuestionDetails(resp.data)
-  // }
 
   // Get Answer Details
   const [answerDetails, setAnswerDetails] = useState({
@@ -80,7 +76,12 @@ const Answer = props => {
           <button class="post-tag">html</button>
           <button class="post-tag">react</button>
         </section>
-
+        {/* <p>{QuestionAverageRating}</p>
+        <p>{questionScore}</p> */}
+        <p>
+          <QuestionAverageRating answers={answers} />
+          {/* <QuestionAverageRating question={question} /> */}
+        </p>
         <section className="answer-share-user-container">
           <ul>
             <li class="share">share - edit - follow</li>
@@ -93,6 +94,7 @@ const Answer = props => {
             return (
               <li>
                 <p>Answer: {answer.comment}</p>
+                {/* <p>{rating}</p> */}
               </li>
             )
           })}
@@ -114,6 +116,17 @@ const Answer = props => {
             onChange={e => setNewAnswerText(e.target.value)}
           ></textarea>
         </section>
+        <button
+          onClick={() =>
+            setReviewScore(prevReviewScore => {
+              return [prevReviewScore + 1]
+            })
+          }
+        >
+          like!
+        </button>
+        <button onClick={() => setReviewScore(1)}>like!</button>
+        {/* <button onClick={() => setQuestionScore(1)}>Thumbs up</button> */}
         <button className="button" onClick={sendAnswerToApi}>
           Post Your Answer
         </button>
