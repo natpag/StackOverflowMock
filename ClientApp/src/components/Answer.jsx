@@ -5,9 +5,7 @@ import QuestionAverageRating from './QuestionAverageRating'
 
 const Answer = props => {
   console.log(props)
-  const { question } = props
   const { questionId } = props
-  const { answerId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
   const [reviewScore, setReviewScore] = useState(0)
@@ -20,21 +18,21 @@ const Answer = props => {
     })
     console.log(resp.data)
   }
-  const [questionDetail, setQuestionDetail] = useState({
-    questionData: {},
-  })
 
   // Get Question Details
-  const getQuestionData = async () => {
-    const response = await axios.get(`/api/Questions/${questionId}`)
-    setQuestionDetail({
-      questionData: response.data,
-    })
-  }
   const [questionDetails, setQuestionDetails] = useState({
     questionData: {},
   })
 
+<<<<<<< HEAD
+=======
+  const getQuestionData = async () => {
+    const resp = await axios.get('/api/Questions/' + questionId)
+    console.log(resp.data)
+    setQuestionDetails(resp.data)
+  }
+
+>>>>>>> 3c53fcf46df94f7de89b92800387a1822aada01b
   // Get Answer Details
   const [answerDetails, setAnswerDetails] = useState({
     answerData: {},
@@ -58,9 +56,7 @@ const Answer = props => {
     <>
       <section className="answer-container">
         <section className="answer-header">
-          <h2>Question Title</h2>
-          <h2>{questionDetail.questionData.title}</h2>
-
+          <h2>{questionDetails.title}</h2>
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
