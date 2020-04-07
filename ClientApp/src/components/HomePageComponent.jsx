@@ -8,7 +8,7 @@ const HomePageComponent = () => {
   })
 
   const getQuestionData = async () => {
-    const resp = await axios.get(`/api/questions?allQuestions=${allQuestions}`)
+    const resp = await axios.get(`/api/questions`)
     console.log(resp.data)
     setAllQuestions(resp.data)
   }
@@ -72,7 +72,7 @@ const HomePageComponent = () => {
                 </div>
               </div>
               <section className="summary">
-                <Link to="/question/:questionId">{allQuestions.title}</Link>
+                <Link to="/question/:questionId">Question Title</Link>
                 <section className="tags">
                   <Link to="/question/:questionId" class="post-tag">
                     javascript
