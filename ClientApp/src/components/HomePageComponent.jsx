@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const HomePageComponent = () => {
+  const [allQuestions, setAllQuestions] = useState({
+    questionData: {},
+  })
+
+  const getQuestionData = async () => {
+    const resp = await axios.get(`/api/questions?allQuestions=${allQuestions}`)
+    console.log(resp.data)
+    setAllQuestions(resp.data)
+  }
+
+  useEffect(() => {
+    getQuestionData()
+  }, [])
+
   return (
     <>
       <section className="homePage">
@@ -21,6 +35,7 @@ const HomePageComponent = () => {
           </section>
           <p>TEAMS</p>
         </section>
+
         <section className="allQuestions">
           <p class="allQuestionsHeader">All Questions</p>
         </section>
@@ -31,6 +46,7 @@ const HomePageComponent = () => {
             </Link>
           </button>
         </section>
+
         <section className="centerSection">
           <section className="centerContainer">
             <div className="boxed centerHeader">
@@ -56,14 +72,12 @@ const HomePageComponent = () => {
                 </div>
               </div>
               <section className="summary">
-                <Link to="/answer">
-                  Summary of Question / can also be title
-                </Link>
+                <Link to="/question/:questionId">{allQuestions.title}</Link>
                 <section className="tags">
-                  <Link to="/answer" class="post-tag">
+                  <Link to="/question/:questionId" class="post-tag">
                     javascript
                   </Link>
-                  <Link to="/answer" class="post-tag">
+                  <Link to="/question/:questionId" class="post-tag">
                     javascript
                   </Link>
                 </section>
@@ -72,6 +86,7 @@ const HomePageComponent = () => {
             </section>
           </section>
         </section>
+
         <section className="rightSection">
           <section className="overflowBlog">
             <p>The Overflow Blog</p>

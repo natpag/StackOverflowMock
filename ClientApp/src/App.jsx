@@ -22,9 +22,8 @@ export default class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/counter" component={HelloWorld} />
           <Route exact path="/typescript" component={HeyWorld} />
-          <Route exact path="/answer" component={AnswerPage} />
+          {/* <Route exact path="/answer" component={AnswerPage} /> */}
           <Route exact path="/question/:questionId" component={AnswerPage} />
-
           <Route exact path="/ask" component={AskPage} />
           <Route exact path="/Submitted" component={SubmittedQuestion} />
           <Route exact path="/Search" component={Search} />

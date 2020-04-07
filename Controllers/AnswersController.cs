@@ -27,6 +27,20 @@ namespace StackOverflowMock.Controllers
       return await _context.Answers.ToListAsync();
     }
 
+    //Get: api/Answers/questionId
+    [HttpGet("question/{questionId}")]
+    public async Task<ActionResult<IEnumerable<Answer>>> GetAnswersForQuestion(int QuestionId)
+    {
+      var allAnswersForQuestion = await _context.Answers.Where(w => w.QuestionId == QuestionId).ToListAsync();
+
+      if (allAnswersForQuestion == null)
+      {
+        return NotFound();
+      }
+
+      return allAnswersForQuestion;
+    }
+
     // GET: api/Answers/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Answer>> GetAnswer(int id)
