@@ -14,15 +14,21 @@ const Answer = props => {
       answer: newAnswerText,
     })
     console.log(resp.data)
-    // const resp = await axios.post(`/api/question`)
   }
-  const [questionDetail, setQuestionDetail] = useState()
-
+  // empty obj
+  const [questionDetail, setQuestionDetail] = useState({
+    questionData: {},
+  })
+  //
   const getQuestionData = async () => {
     const response = await axios.get(`/api/Questions/${questionId}`)
-    console.log(response.data)
-    console.log(response.data.title)
-    setQuestionDetail(response.data)
+    // console.log(response.data)
+    // console.log(response.data.title)
+    // setQuestionDetail(response.data)
+    setQuestionDetail({
+      // set the object to the data from api? maybe
+      questionData: response.data,
+    })
   }
   useEffect(() => {
     getQuestionData()
@@ -33,8 +39,10 @@ const Answer = props => {
       <section className="answer-container">
         <section className="answer-header">
           <h2>Question Title</h2>
-          {/* <h2>{response.data.title} </h2> */}
-          <h2>hi</h2>
+          {/* <h2>{questionDetail.Title}</h2> */}
+          {/* <h2>{questionData.title}</h2> */}
+          <h2>{questionDetail.questionData.title}</h2>
+
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
