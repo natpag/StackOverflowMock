@@ -18,11 +18,7 @@ const QuestionDetails = props => {
   useEffect(() => {
     getQuestionData()
   }, [])
-  return (
-    <>
-      <Question question={question} />
-    </>
-  )
+  return <>{/* <Question question={question} /> */}</>
 }
 
 export default QuestionDetails

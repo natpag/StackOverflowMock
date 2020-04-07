@@ -4,7 +4,12 @@ import Question from '../components/Question'
 
 const Answer = props => {
   console.log(props)
+<<<<<<< HEAD
   const { question } = props
+=======
+  // const questionId = props.match.params.questionId
+  // const { question } = props
+>>>>>>> 43be05ee5423a7cd1592a57f39c070786c1a0a21
   const { questionId } = props
   const { answerId } = props
   const [answers, setAnswers] = useState([])
@@ -16,6 +21,24 @@ const Answer = props => {
     })
     console.log(resp.data)
   }
+  // empty obj
+  const [questionDetail, setQuestionDetail] = useState({
+    questionData: {},
+  })
+  //
+  const getQuestionData = async () => {
+    const response = await axios.get(`/api/Questions/${questionId}`)
+    // console.log(response.data)
+    // console.log(response.data.title)
+    // setQuestionDetail(response.data)
+    setQuestionDetail({
+      // set the object to the data from api? maybe
+      questionData: response.data,
+    })
+  }
+  useEffect(() => {
+    getQuestionData()
+  }, [])
 
   const [questionDetails, setQuestionDetails] = useState({
     questionData: {},
@@ -50,7 +73,15 @@ const Answer = props => {
     <>
       <section className="answer-container">
         <section className="answer-header">
+<<<<<<< HEAD
           <h2>{questionDetails.title}</h2>
+=======
+          <h2>Question Title</h2>
+          {/* <h2>{questionDetail.Title}</h2> */}
+          {/* <h2>{questionData.title}</h2> */}
+          <h2>{questionDetail.questionData.title}</h2>
+
+>>>>>>> 43be05ee5423a7cd1592a57f39c070786c1a0a21
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
