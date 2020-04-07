@@ -5,7 +5,7 @@ import Question from '../components/Question'
 const Answer = props => {
   console.log(props)
   // const questionId = props.match.params.questionId
-  const { question } = props
+  // const { question } = props
   const { questionId } = props
   const [newAnswerText, setNewAnswerText] = useState()
 
@@ -14,15 +14,27 @@ const Answer = props => {
       answer: newAnswerText,
     })
     console.log(resp.data)
-    const resp = await axios.post(`/api/question`)
+    // const resp = await axios.post(`/api/question`)
   }
+  const [questionDetail, setQuestionDetail] = useState()
+
+  const getQuestionData = async () => {
+    const response = await axios.get(`/api/Questions/${questionId}`)
+    console.log(response.data)
+    console.log(response.data.title)
+    setQuestionDetail(response.data)
+  }
+  useEffect(() => {
+    getQuestionData()
+  }, [])
 
   return (
     <>
       <section className="answer-container">
         <section className="answer-header">
           <h2>Question Title</h2>
-          <h2>{question1}</h2>
+          {/* <h2>{response.data.title} </h2> */}
+          <h2>hi</h2>
           <ul className="answer-under-header">
             <li>Asked Today</li>
             <li>Viewed 2 Times</li>
