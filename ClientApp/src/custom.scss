@@ -326,7 +326,8 @@ span {
   width: auto;
   margin: 0;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 10px;
+  color: #0077cc;
 }
 
 .post-tag {
@@ -379,4 +380,9 @@ span {
 
 .AnswerList {
   list-style: none;
+}
+
+.QuestionList {
+  list-style: none;
+  color: #0077cc;
 }

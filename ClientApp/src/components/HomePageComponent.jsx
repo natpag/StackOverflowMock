@@ -3,18 +3,16 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const HomePageComponent = () => {
-  const [allQuestions, setAllQuestions] = useState({
-    questionData: {},
-  })
+  const [questions, setQuestions] = useState([])
 
-  const getQuestionData = async () => {
-    const resp = await axios.get(`/api/Questions/`)
+  const getAllQuestions = async () => {
+    const resp = await axios.get('/api/Questions')
     console.log(resp.data)
-    setAllQuestions(resp.data)
+    setQuestions(resp.data)
   }
 
   useEffect(() => {
-    getQuestionData()
+    getAllQuestions()
   }, [])
 
   return (
@@ -52,38 +50,41 @@ const HomePageComponent = () => {
             <div className="boxed centerHeader">
               Stack Overflow Recently Active Questions
             </div>
-            <section className="boxed questionBox">
-              <div className="votes">
-                <div className="mini-counts">
-                  <span title>0</span>
-                  <div className="label">votes</div>
-                </div>
-              </div>
-              <div className="answers">
-                <div className="mini-counts">
-                  <span title>0</span>
-                  <div className="label">answers</div>
-                </div>
-              </div>
-              <div className="views">
-                <div className="mini-counts">
-                  <span title>0</span>
-                  <div className="label">views</div>
-                </div>
-              </div>
-              <section className="summary">
-                <Link to="/question/:questionId">Question Title</Link>
-                <section className="tags">
-                  <Link to="/question/:questionId" class="post-tag">
-                    javascript
-                  </Link>
-                  <Link to="/question/:questionId" class="post-tag">
-                    javascript
-                  </Link>
+
+            {questions.map(question => {
+              return (
+                <section className="boxed questionBox">
+                  <div className="votes">
+                    <div className="mini-counts">
+                      <span title>0</span>
+                      <div className="label">votes</div>
+                    </div>
+                  </div>
+                  <div className="answers">
+                    <div className="mini-counts">
+                      <span title>0</span>
+                      <div className="label">answers</div>
+                    </div>
+                  </div>
+                  <div className="views">
+                    <div className="mini-counts">
+                      <span title>0</span>
+                      <div className="label">views</div>
+                    </div>
+                  </div>
+
+                  <section className="summary">
+                    <Link to={`/question/${question.id}`}>{question.body}</Link>
+                    <section className="tags">
+                      <Link to={`/question/${question.id}`} class="post-tag">
+                        {question.tags}
+                      </Link>
+                    </section>
+                  </section>
+                  <section className="startedBy">Added by "user"</section>
                 </section>
-              </section>
-              <section className="startedBy">Added by "user"</section>
-            </section>
+              )
+            })}
           </section>
         </section>
 
