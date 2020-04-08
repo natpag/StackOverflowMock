@@ -125,7 +125,7 @@ button {
   padding: 1rem;
 }
 .homePage {
-  sdisplay: grid;
+  display: grid;
   grid-template-rows: 2rem 2rem 2rem 10rem 10rem 10rem 10rem;
   grid-template-columns: 15% 25% 35% 25%;
 }
@@ -385,4 +385,8 @@ span {
 .QuestionList {
   list-style: none;
   color: #0077cc;
+}
+
+.searchResult {
+  padding-left: 0;
 }

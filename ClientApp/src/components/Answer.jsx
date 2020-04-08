@@ -115,7 +115,7 @@ const Answer = props => {
           like!
         </button>
         <button onClick={() => setReviewScore(1)}>like!</button>
-        {/* <button onClick={() => setQuestionScore(1)}>Thumbs up</button> */}s
+        {/* <button onClick={() => setQuestionScore(1)}>Thumbs up</button> */}
         <button className="button" onClick={sendAnswerToApi}>
           Post Your Answer
         </button>
