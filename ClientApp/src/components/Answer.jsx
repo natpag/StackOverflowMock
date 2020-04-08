@@ -68,30 +68,30 @@ const Answer = props => {
           <button class="post-tag">html</button>
           <button class="post-tag">react</button>
         </section>
-        {/* <p>{QuestionAverageRating}</p>
-        <p>{questionScore}</p> */}
-        <p>
-          <QuestionVotes answers={answers} />
-          {/* <QuestionAverageRating question={question} /> */}
-        </p>
         <section className="answer-share-user-container">
           <ul>
             <li class="share">share - edit - follow</li>
             <li className="answer-user-info">user info somehow</li>
           </ul>
         </section>
-        <ul className="AnswerList">
+        <h6>{answers.length} Answers</h6>
+        <section className="AnswerList">
           {answers.map(answer => {
             return (
-              <li>
-                <p>Answer: {answer.comment}</p>
-                {/* <p>{rating}</p> */}
-              </li>
+              <>
+                <section className="answerComponent">
+                  <section className="votes">
+                    <button className="voteArrow">UP</button>
+                    {answer.vote}
+                    <button className="voteArrow">DOWN</button>
+                  </section>
+                  <p>Answer: {answer.comment}</p>
+                </section>
+              </>
             )
           })}
-        </ul>
-        <h6>{answers.length} Answers</h6>
-        <h5>Your Answer</h5>
+        </section>
+        <h6>Your Answer</h6>
         <section className="answer-text-area-container">
           <textarea
             name=""

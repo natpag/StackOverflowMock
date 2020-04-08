@@ -18,6 +18,7 @@ code {
 .answer-under-header {
   list-style: none;
   display: flex;
+  padding-left: 0;
   justify-content: left;
   border-bottom: 0.09rem solid lightgrey;
   padding-bottom: 0.5rem;
@@ -389,4 +390,9 @@ span {
 
 .searchResult {
   padding-left: 0;
+}
+
+.answerComponent {
+  display: flex;
+  justify-content: left;
 }
