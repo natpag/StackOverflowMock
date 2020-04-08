@@ -3,17 +3,20 @@ import axios from 'axios'
 
 const AnswerVote = props => {
   const { answer } = props
+  const [answerVote, setAnswerVote] = useState(answer.vote)
 
   // Add Votes to Answers APi *****************
   const addAnswerVotesToApi = async id => {
     const resp = await axios.post(`/api/Answers/${id}/upVote`)
     console.log(resp.data)
+    setAnswerVote(answerVote + 1)
   }
 
   // Subtract Votes to Answers APi *****************
   const subtractAnswerVotesToApi = async id => {
     const resp = await axios.post(`/api/Answers/${id}/downVote`)
     console.log(resp.data)
+    setAnswerVote(answerVote - 1)
   }
 
   return (
@@ -25,7 +28,7 @@ const AnswerVote = props => {
         >
           Up
         </button>
-        {answer.vote}
+        {answerVote}
         <button
           className="voteArrow"
           onClick={() => subtractAnswerVotesToApi(answer.id)}

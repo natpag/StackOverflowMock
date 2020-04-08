@@ -3,17 +3,20 @@ import axios from 'axios'
 
 const QuestionVotes = props => {
   const { question } = props
+  // const [questionVote, setQuestionVote] = useState(question.vote)
 
   // Add Votes to Question APi *****************
   const addQuestionVotesToApi = async id => {
     const resp = await axios.post(`/api/Questions/${id}/upVoteQ`)
     console.log(resp.data)
+    // setQuestionVote(questionVote + 1)
   }
 
   // Subtract Votes to Question APi *****************
   const subtractQuestionVotesToApi = async id => {
     const resp = await axios.post(`/api/Questions/${id}/downVoteQ`)
     console.log(resp.data)
+    // setQuestionVote(questionVote - 1)
   }
 
   return (
@@ -33,7 +36,7 @@ const QuestionVotes = props => {
           Down
         </button>
       </section>
-      <p>Answer: {question.body}</p>
+      <p>{question.body}</p>
     </section>
   )
 }
