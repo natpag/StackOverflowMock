@@ -24,15 +24,12 @@ const Answer = props => {
     questionData: {},
   })
 
-<<<<<<< HEAD
-=======
   const getQuestionData = async () => {
     const resp = await axios.get('/api/Questions/' + questionId)
     console.log(resp.data)
     setQuestionDetails(resp.data)
   }
 
->>>>>>> 3c53fcf46df94f7de89b92800387a1822aada01b
   // Get Answer Details
   const [answerDetails, setAnswerDetails] = useState({
     answerData: {},
@@ -62,7 +59,6 @@ const Answer = props => {
             <li>Viewed 2 Times</li>
           </ul>
         </section>
-
         <p>{questionDetails.body}</p>
         <section className="answer-code-container">
           <p className="answer-code-section">code example goes here</p>
@@ -84,7 +80,6 @@ const Answer = props => {
             <li className="answer-user-info">user info somehow</li>
           </ul>
         </section>
-
         <ul className="AnswerList">
           {answers.map(answer => {
             return (
@@ -95,11 +90,9 @@ const Answer = props => {
             )
           })}
         </ul>
-
         <h6 className="answer-know-someone">
           Know someone who can answer? Share a link to this question via email.
         </h6>
-
         <h5>Your Answer</h5>
         <section className="answer-text-area-container">
           <textarea
@@ -122,7 +115,7 @@ const Answer = props => {
           like!
         </button>
         <button onClick={() => setReviewScore(1)}>like!</button>
-        {/* <button onClick={() => setQuestionScore(1)}>Thumbs up</button> */}
+        {/* <button onClick={() => setQuestionScore(1)}>Thumbs up</button> */}s
         <button className="button" onClick={sendAnswerToApi}>
           Post Your Answer
         </button>
