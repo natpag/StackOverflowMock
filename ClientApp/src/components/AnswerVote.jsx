@@ -12,6 +12,12 @@ const AnswerVote = props => {
     console.log(resp.data)
   }
 
+  // Subtract Votes to Answers APi *****************
+  const subtractAnswerVotesToApi = async id => {
+    const resp = await axios.post(`/api/Answers/${id}/downVote`)
+    console.log(resp.data)
+  }
+
   return (
     <section className="answerComponent">
       <section className="votes">
@@ -22,7 +28,12 @@ const AnswerVote = props => {
           Up
         </button>
         {answer.vote}
-        <button className="voteArrow">Down</button>
+        <button
+          className="voteArrow"
+          onClick={() => subtractAnswerVotesToApi(answer.id)}
+        >
+          Down
+        </button>
       </section>
       <p>Answer: {answer.comment}</p>
     </section>

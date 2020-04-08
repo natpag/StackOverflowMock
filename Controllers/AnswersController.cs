@@ -41,7 +41,7 @@ namespace StackOverflowMock.Controllers
       return allAnswersForQuestion;
     }
 
-    // POST: api/Answers/*********************
+    // POST: api/Answers/
     // +1 to vote
     [HttpPost("{id}/upVote")]
     public async Task<ActionResult<Answer>> AddAnswerVote(int id)
@@ -53,6 +53,22 @@ namespace StackOverflowMock.Controllers
         return NotFound();
       }
       answer.Vote++;
+      await _context.SaveChangesAsync();
+      return answer;
+    }
+
+    // POST: api/Answers/
+    // -1 to vote
+    [HttpPost("{id}/downVote")]
+    public async Task<ActionResult<Answer>> SubtractAnswerVote(int id)
+    {
+      var answer = await _context.Answers.FindAsync(id);
+
+      if (answer == null)
+      {
+        return NotFound();
+      }
+      answer.Vote--;
       await _context.SaveChangesAsync();
       return answer;
     }
