@@ -1,21 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Question from '../components/Question'
 import { Link } from 'react-router-dom'
-import QuestionVotes from './QuestionVotes'
 
 const Answer = props => {
   console.log(props)
   const { questionId } = props
+  const { answerId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
-  const [reviewScore, setReviewScore] = useState(0)
 
   // Send Answer to API
   const sendAnswerToApi = async () => {
     const resp = await axios.post(`/api/Questions/${questionId}/answers`, {
       comment: newAnswerText,
     })
+    console.log(resp.data)
+  }
+
+  // Add Votes to Answers APi
+  const addAnswerVotesToApi = async () => {
+    const resp = await axios.put(`/api/Answers/addVote/${answerId}`)
+    console.log(resp.data)
+  }
+
+  //SUBTRACT Votes to Answer Api
+  const subtractAnswerVotesToApi = async () => {
+    const resp = await axios.put(`/api/Answers/subtractVote/${answerId}`)
     console.log(resp.data)
   }
 
@@ -81,9 +91,16 @@ const Answer = props => {
               <>
                 <section className="answerComponent">
                   <section className="votes">
-                    <button className="voteArrow">UP</button>
+                    <button
+                      className="voteArrow"
+                      // onClick={e => {
+                      //   addAnswerVotesToApi(e.target.value)++
+                      // }}
+                    >
+                      Up
+                    </button>
                     {answer.vote}
-                    <button className="voteArrow">DOWN</button>
+                    <button className="voteArrow">Down</button>
                   </section>
                   <p>Answer: {answer.comment}</p>
                 </section>

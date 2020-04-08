@@ -41,6 +41,22 @@ namespace StackOverflowMock.Controllers
       return allAnswersForQuestion;
     }
 
+    // POST: api/Answers/*********************
+    // +1 to vote
+    // [HttpPost("id")]
+    // public async Task<ActionResult<Answer>> AddAnswerVote(int id, int Vote)
+    // {
+    //   var answer = await _context.Answers.FindAsync(id);
+
+    //   if (answer == null)
+    //   {
+    //     return NotFound();
+    //   }
+
+    //   return answer.Vote ;
+    // }
+
+
     // GET: api/Answers/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Answer>> GetAnswer(int id)

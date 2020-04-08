@@ -4,7 +4,10 @@ import Answer from '../components/Answer'
 const AnswerPage = props => {
   return (
     <>
-      <Answer questionId={props.match.params.questionId} />
+      <Answer
+        questionId={props.match.params.questionId}
+        // answerId={props.match.params.answerId}
+      />
     </>
   )
 }
