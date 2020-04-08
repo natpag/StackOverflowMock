@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import AnswerVote from '../components/AnswerVote'
+import QuestionVotes from '../components/QuestionVotes'
 
 const Answer = props => {
   console.log(props)
   const { questionId } = props
-  const { answerId } = props
   const [answers, setAnswers] = useState([])
   const [newAnswerText, setNewAnswerText] = useState()
 
@@ -58,7 +58,11 @@ const Answer = props => {
             <li>Viewed 2 Times</li>
           </ul>
         </section>
-        <p>{questionDetails.body}</p>
+
+        <section className="QuestionDisplay">
+          <QuestionVotes question={questionDetails} />
+        </section>
+
         <section className="answer-code-container">
           <p className="answer-code-section">code example goes here</p>
         </section>

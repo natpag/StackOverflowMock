@@ -27,6 +27,38 @@ namespace StackOverflowMock.Controllers
       return await _context.Questions.ToListAsync();
     }
 
+    // POST: api/Questions/
+    // +1 to vote
+    [HttpPost("{id}/upVoteQ")]
+    public async Task<ActionResult<Question>> AddQuestionVote(int id)
+    {
+      var question = await _context.Questions.FindAsync(id);
+
+      if (question == null)
+      {
+        return NotFound();
+      }
+      question.Vote++;
+      await _context.SaveChangesAsync();
+      return question;
+    }
+
+    // POST: api/Questions/
+    // -1 to vote
+    [HttpPost("{id}/downVoteQ")]
+    public async Task<ActionResult<Question>> SubtractQuestionVote(int id)
+    {
+      var question = await _context.Questions.FindAsync(id);
+
+      if (question == null)
+      {
+        return NotFound();
+      }
+      question.Vote--;
+      await _context.SaveChangesAsync();
+      return question;
+    }
+
     // GET: api/Questions/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Question>> GetQuestion(int id)

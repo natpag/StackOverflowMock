@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import Answer from '../components/Answer'
 
 const AnswerVote = props => {
   const { answer } = props
