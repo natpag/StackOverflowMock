@@ -6,7 +6,7 @@ const SubmittedQuestion = () => {
     <>
       <section className="homePage">
         <section className="submitted">
-          <h6>Thank you for submitting your question!</h6>
+          <h6>Thank you for submitting!</h6>
           <Link to="/">Click here to go home!</Link>
         </section>
       </section>
