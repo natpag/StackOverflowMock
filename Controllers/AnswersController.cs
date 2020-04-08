@@ -43,18 +43,19 @@ namespace StackOverflowMock.Controllers
 
     // POST: api/Answers/*********************
     // +1 to vote
-    // [HttpPost("id")]
-    // public async Task<ActionResult<Answer>> AddAnswerVote(int id, int Vote)
-    // {
-    //   var answer = await _context.Answers.FindAsync(id);
+    [HttpPost("{id}/upVote")]
+    public async Task<ActionResult<Answer>> AddAnswerVote(int id)
+    {
+      var answer = await _context.Answers.FindAsync(id);
 
-    //   if (answer == null)
-    //   {
-    //     return NotFound();
-    //   }
-
-    //   return answer.Vote ;
-    // }
+      if (answer == null)
+      {
+        return NotFound();
+      }
+      answer.Vote++;
+      await _context.SaveChangesAsync();
+      return answer;
+    }
 
 
     // GET: api/Answers/5

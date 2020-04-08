@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import AnswerVote from '../components/AnswerVote'
 
 const Answer = props => {
   console.log(props)
@@ -14,18 +15,6 @@ const Answer = props => {
     const resp = await axios.post(`/api/Questions/${questionId}/answers`, {
       comment: newAnswerText,
     })
-    console.log(resp.data)
-  }
-
-  // Add Votes to Answers APi
-  const addAnswerVotesToApi = async () => {
-    const resp = await axios.put(`/api/Answers/addVote/${answerId}`)
-    console.log(resp.data)
-  }
-
-  //SUBTRACT Votes to Answer Api
-  const subtractAnswerVotesToApi = async () => {
-    const resp = await axios.put(`/api/Answers/subtractVote/${answerId}`)
     console.log(resp.data)
   }
 
@@ -89,21 +78,7 @@ const Answer = props => {
           {answers.map(answer => {
             return (
               <>
-                <section className="answerComponent">
-                  <section className="votes">
-                    <button
-                      className="voteArrow"
-                      // onClick={e => {
-                      //   addAnswerVotesToApi(e.target.value)++
-                      // }}
-                    >
-                      Up
-                    </button>
-                    {answer.vote}
-                    <button className="voteArrow">Down</button>
-                  </section>
-                  <p>Answer: {answer.comment}</p>
-                </section>
+                <AnswerVote answer={answer} />
               </>
             )
           })}

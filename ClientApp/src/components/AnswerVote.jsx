@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import Answer from '../components/Answer'
 
 const AnswerVote = props => {
-  const { answers } = props
+  const { answer } = props
 
-  let total = 0
-  for (let i = 0; i < answers.vote; i++) {
-    total += answers[i].vote
+  // Add Votes to Answers APi *****************
+  const addAnswerVotesToApi = async id => {
+    const resp = await axios.post(`/api/Answers/${id}/upVote`)
+    console.log(resp.data)
   }
-  console.log(answers.vote)
-  return <>{answers.vote}</>
+
+  return (
+    <section className="answerComponent">
+      <section className="votes">
+        <button
+          className="voteArrow"
+          onClick={() => addAnswerVotesToApi(answer.id)}
+        >
+          Up
+        </button>
+        {answer.vote}
+        <button className="voteArrow">Down</button>
+      </section>
+      <p>Answer: {answer.comment}</p>
+    </section>
+  )
 }
 
 export default AnswerVote
